@@ -1,0 +1,13 @@
+# Base de Conhecimento - Rio de Janeiro
+Pão de Açúcar: Um dos pontos turísticos mais famosos do Rio, com vista panorâmica da cidade.
+Cristo Redentor: Uma das sete maravilhas do mundo moderno, localizado no topo do Corcovado.
+Copacabana: Praia icônica, famosa pelo calçadão e vida noturna.
+Restaurante Aprazível: Restaurante de comida brasileira contemporânea em Santa Teresa.
+Dica: Evite ostentar objetos de valor em áreas turísticas movimentadas.
+
+# Base de Conhecimento - Paris
+Torre Eiffel: Principal símbolo de Paris, ideal para visitação diurna e noturna.
+Museu do Louvre: Maior museu de arte do mundo, abriga a Mona Lisa.
+Montmartre: Bairro boêmio, conhecido por artistas de rua e a Basílica de Sacré-Cœur.
+Le Potager du Marais: Restaurante vegano tradicional em Paris.
+Dica: Compre ingressos para atrações com antecedência para evitar filas.
