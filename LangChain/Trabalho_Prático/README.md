@@ -59,39 +59,83 @@ Sistema inteligente que classifica consultas turísticas e as direciona para esp
 ├── 📓 04-Router.ipynb           # Classificador inteligente
 ├── 📓 05-Sistema.ipynb          # Interface unificada
 ├── 📄 base_conhecimento.txt     # Dados turísticos
-├── 📄 requirements.txt          # Dependências
+├── 📄 requirements.txt          # Dependências Python
+├── 🔐 .env                      # Chaves de API (privado)
+├── 🚫 .gitignore               # Proteção do .env
 └── 📁 docs/                     # Documentação
     ├── 📋 PROBLEMA.md           # Especificação
     └── 🔧 SOLUCAO.md            # Implementação
 ```
 
+> 🔐 **Segurança:** O arquivo `.env` contém as chaves privadas de API e está protegido pelo `.gitignore` para nunca ser enviado ao repositório público.
+
 ---
 
 ## ⚡ **Execução Rápida**
 
-### **1️⃣ Setup:**
+### **🐍 Pré-requisitos: Anaconda**
 
 ```bash
-# Instalar dependências
+# 1. Download e instalação do Anaconda
+# https://www.anaconda.com/products/distribution
+wget https://repo.anaconda.com/archive/Anaconda3-2023.09-Linux-x86_64.sh
+bash Anaconda3-2023.09-Linux-x86_64.sh
+```
+
+### **🚀 Setup do Ambiente:**
+
+```bash
+# 2. Criar ambiente conda dedicado
+conda create -n LangChain python=3.11 -y
+
+# 3. Ativar o ambiente
+conda activate LangChain
+
+# 4. Instalar dependências no ambiente
 pip install -r requirements.txt
 
-# Configurar variáveis de ambiente (.env)
+# 5. Criar kernel Jupyter para VS Code
+python -m ipykernel install --user --name=LangChain --display-name="LangChain"
+
+# 6. Configurar variáveis de ambiente (.env)
 GROQ_API_KEY=sua_chave_groq
 PINECONE_API_KEY=sua_chave_pinecone
 ```
 
+### **🔧 Gerenciamento do Ambiente:**
+
+```bash
+# Ativar ambiente LangChain
+conda activate LangChain
+
+# Desativar ambiente
+conda deactivate
+
+# Listar ambientes disponíveis
+conda env list
+
+# Verificar kernel no Jupyter
+jupyter kernelspec list
+```
+
+### **📝 Configuração VS Code:**
+
+1. **Abrir notebook** (.ipynb)
+2. **Selecionar Kernel** → `LangChain` (canto superior direito)
+3. **Verificar ambiente** ativo na barra de status
+
+> 🎯 **Framework Unificado:** Todo o projeto utiliza o **LangChain** como framework principal, integrando Groq (LLM), Pinecone (vetores) e HuggingFace (embeddings) sob uma única arquitetura coesa.
+
 ### **2️⃣ Executar:**
 
 ```python
+# Ativar ambiente primeiro
+# conda activate LangChain
+
 # Interface simplificada
 resposta = perguntar_guia("O que visitar no Rio de Janeiro?")
 print(resposta)
 ```
-
-### **3️⃣ Notebooks:**
-
-1. **01-Pinecone.ipynb** → Indexar dados
-2. **05-Sistema.ipynb** → Interface completa
 
 ---
 
