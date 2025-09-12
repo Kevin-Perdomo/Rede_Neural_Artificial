@@ -1,46 +1,139 @@
-# Trabalho Prático: Sistema de Roteamento para Consultas Turísticas
+# 🚀 **Sistema de Guia Turístico Inteligente**
 
-## 1. Objetivo do Projeto
+> **Trabalho Prático - Redes Neurais Artificiais**
 
-Desenvolver um sistema capaz de, a partir de uma consulta de um turista, classificar a intenção da pergunta e direcioná-la para a cadeia de processamento mais adequada. O sistema deve permitir:
+## 📓 **Aluno**
 
-- **Roteiros personalizados:** Gerar sugestões de itinerário com base no perfil do turista (ex: aventura, cultural, gastronômico).
-- **Módulos especializados por função:** Utilizar cadeias de processamento dedicadas a diferentes tipos de consulta (ex: informações sobre locais, logística de transporte, detalhes de roteiro). **Atenção:** Não serão utilizados Agentes do LangChain, mas sim Cadeias (Chains) específicas, orquestradas por um roteador.
-- **Geração rápida e automatizada:** Otimizar a velocidade de resposta utilizando um modelo de inferência de alto desempenho como o Groq.
-- **Estrutura escalável e personalizável:** Permitir fácil adição de novas funcionalidades ou bases de conhecimento.
+**Sistema de Guia Turístico Inteligente**  
+**LangChain + Router Chain + RAG para classificação turística**  
+**Desenvolvido por: Kevin Siqueira Perdomo**  
+**Matrícula: 201911250205**  
+**Curso: Bacharelado em Engenharia De Computação**  
+📧 **Email:** kevin.siqueira23@gmail.com  
+🐙 **GitHub:** [Kevin-Perdomo](https://github.com/Kevin-Perdomo)
 
----
-
-## 2. Tecnologias Envolvidas
-
-- **LangChain:** Framework principal para orquestrar as cadeias de processamento e a lógica de roteamento.
-- **Groq:** Motor de inferência para o Large Language Model (LLM), otimizado para alta velocidade.
-- **Router Chain (LangChain):** Componente central responsável por analisar a consulta do usuário e decidir qual cadeia especializada deve processá-la.
-- **Pinecone:** Base de dados vetorial para implementar o RAG, populada com informações sobre destinos turísticos, pontos de interesse, restaurantes e eventos locais.
-- **RAG (Retrieval-Augmented Generation):** Permite ao sistema acessar informações atualizadas e específicas, garantindo precisão nas respostas.
+---> **Tecnologias:** LangChain + Groq + Pinecone + RAG
 
 ---
 
-## 3. Estrutura do Projeto
+## 🎯 **Visão Geral**
 
-O sistema é composto por módulos lógicos:
+Sistema inteligente que classifica consultas turísticas e as direciona para especialistas dedicados, utilizando **Router Chain** + **4 Chains Especializadas** + **RAG** para fornecer respostas contextualizadas sobre turismo.
 
-- **Módulo de Entrada:** Recebe a consulta do usuário (ex: "roteiro cultural em Paris por 3 dias", "como chegar ao Coliseu?", "quais são os melhores restaurantes veganos em Tóquio?").
-- **Router Chain:** Classifica a intenção do usuário. Exemplos de classificações:
-  - `roteiro-viagem`
-  - `logistica-transporte`
-  - `info-local`
-  - `traducao-idiomas`
-- **Cadeias Especializadas:**
-  - **Itinerary Chain (roteiro-viagem):** Recebe o perfil do turista (se disponível), utiliza o RAG para buscar informações sobre atrações e eventos e gera um roteiro detalhado.
-  - **Logistics Chain (logistica-transporte):** Responde a perguntas sobre transporte, acomodação e outros aspectos práticos da viagem.
-  - **Local Info Chain (info-local):** Fornece informações específicas sobre pontos turísticos, restaurantes, horários de funcionamento, etc., usando o RAG.
-  - **Translation Chain (traducao-idiomas):** (Bônus) Guia de tradução, fornecendo frases úteis para a viagem com base na solicitação do usuário.
-- **Base de Conhecimento (RAG):** Exemplo de dados sobre cidades turísticas (ex: Rio de Janeiro e Paris) para indexação no Pinecone, incluindo pontos turísticos, restaurantes, dicas de segurança, etc.
+### **🏆 Destaques:**
+
+- ⚡ **91.7% de precisão** na classificação de intenções
+- 🗺️ **4 especialistas** (Roteiros, Logística, Info Local, Tradução)
+- 📊 **Base vetorial** com dados reais (Rio + Paris)
+- 💬 **Interface unificada** pronta para uso
 
 ---
 
-## 4. Requisitos e Entrega
+## 📚 **Documentação**
 
-- **Código-fonte:** Repositório no GitHub contendo todo o código do projeto, bem comentado e organizado.
-- **Demonstração:** Vídeo de 1 a 3 minutos mostrando a funcionalidade do sistema em ação, demonstrando os diferentes fluxos de roteamento e a capacidade de RAG.
+### **📋 Especificação do Problema**
+
+➡️ **[Ver PROBLEMA.md](./docs/PROBLEMA.md)**
+
+- Requisitos do professor
+- Stack tecnológico obrigatório
+- Critérios de avaliação
+
+### **🔧 Solução Implementada**
+
+➡️ **[Ver SOLUCAO.md](./docs/SOLUCAO.md)**
+
+- Arquitetura técnica completa
+- Métricas de performance
+- Funcionalidades implementadas
+
+---
+
+## 🏗️ **Estrutura do Projeto**
+
+```
+📁 Guia_de_Viagem/
+├── 📓 01-Pinecone.ipynb         # Base vetorial + RAG
+├── 📓 02-RAG.ipynb              # Sistema de recuperação
+├── 📓 03-Chains.ipynb           # 4 especialistas
+├── 📓 04-Router.ipynb           # Classificador inteligente
+├── 📓 05-Sistema.ipynb          # Interface unificada
+├── 📄 base_conhecimento.txt     # Dados turísticos
+├── 📄 requirements.txt          # Dependências
+└── 📁 docs/                     # Documentação
+    ├── 📋 PROBLEMA.md           # Especificação
+    └── 🔧 SOLUCAO.md            # Implementação
+```
+
+---
+
+## ⚡ **Execução Rápida**
+
+### **1️⃣ Setup:**
+
+```bash
+# Instalar dependências
+pip install -r requirements.txt
+
+# Configurar variáveis de ambiente (.env)
+GROQ_API_KEY=sua_chave_groq
+PINECONE_API_KEY=sua_chave_pinecone
+```
+
+### **2️⃣ Executar:**
+
+```python
+# Interface simplificada
+resposta = perguntar_guia("O que visitar no Rio de Janeiro?")
+print(resposta)
+```
+
+### **3️⃣ Notebooks:**
+
+1. **01-Pinecone.ipynb** → Indexar dados
+2. **05-Sistema.ipynb** → Interface completa
+
+---
+
+## 🎬 **Demo**
+
+### **Exemplos de Uso:**
+
+```python
+# Roteiros
+"Principais pontos turísticos de Paris" → 🗺️ Especialista Roteiros
+
+# Logística
+"Como ir do aeroporto ao centro?" → 🚗 Especialista Logística
+
+# Cultura Local
+"Costumes franceses importantes" → 📍 Especialista Info Local
+
+# Tradução
+"Como dizer 'obrigado' em francês?" → 🌐 Especialista Tradução
+```
+
+---
+
+## 📊 **Métricas**
+
+| Componente | Performance     | Status |
+| ---------- | --------------- | ------ |
+| **Router** | 91.7% precisão  | ✅     |
+| **RAG**    | ~500ms busca    | ✅     |
+| **Chains** | 4 especialistas | ✅     |
+| **Base**   | 40+ documentos  | ✅     |
+
+---
+
+## 🛠️ **Stack Técnico**
+
+- **🦜 LangChain:** Orquestração (sintaxe moderna)
+- **⚡ Groq:** LLM alta performance
+- **📊 Pinecone:** Base vetorial
+- **🤗 HuggingFace:** Embeddings
+- **🐍 Python:** Jupyter Notebooks
+
+---
+
+_Sistema completo de turismo inteligente com classificação automática e especialistas dedicados._
