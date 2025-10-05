@@ -1,2 +1,8 @@
+# sensitive files
 .env
 *.old
+# Data files
+*.json
+*.csv
+# Model files
+fitness_chunks.json
