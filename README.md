@@ -1,41 +1,67 @@
-# Rede_Neural_Artificial
+# 🧠 Rede Neural Artificial
 
 <p align="center">
   <img src="https://sigmoidal.ai/wp-content/uploads/2022/05/neural_nets.png" alt="ANN">
 </p>
 
-Repositório com anotações e experimentos sobre Redes Neurais Artificiais, utilizando TensorFlow, Keras e LangChain. Ideal para estudo e prática de modelos como MLP, CNN, RNN e aplicações com IA generativa.
+Repositório com projetos práticos sobre **Redes Neurais Artificiais** e **IA Generativa**, desenvolvido durante o curso de Engenharia de Computação.
 
-## Estrutura do Repositório
+## 📚 Estrutura dos Projetos
 
-- `LangChain/langchain_class/`: Notebooks com exemplos práticos e PDF sobre LangChain.
-- `Rede Neural Convolucional/`: Notebooks e PDFs sobre CNN e classificação de imagens.
+### 🔗 **LangChain & RAG**
 
-## Como Usar
-
-### 1. Clonar o repositório
-
-```bash
-git clone https://github.com/SeuUsuario/Rede_Neural_Artificial.git
-cd Rede_Neural_Artificial
+```
+lang_chain/
+├── 📓 langchain_class/          # 13+ notebooks fundamentais
+└── 🚀 Trabalho_Prático_02/     # Sistema de Guia Turístico
+    └── Guia_de_Viagem/         # Router + RAG + Pinecone
 ```
 
-### 2. Ambiente de Execução para LangChain
+### 🌐 **LangGraph & Agentes**
 
-Entre na pasta `LangChain/langchain_class` e ative seu ambiente Anaconda:
-
-```bash
-conda activate seu_ambiente
+```
+lang_graph/
+├── 📓 langgraph_class/          # Notebooks educacionais
+└── 🏋️‍♂️ Trabalho_Prático_03/   # AI Fitness Coach
+    └── AI_Fitness_Coach/       # Pipeline completo + PDF
 ```
 
-Instale as dependências:
+### 🖼️ **Redes Neurais Convolucionais**
 
-```bash
-pip install -r requirements.txt
+```
+cnn/
+├── 📄 Literatura/              # Papers e materiais
+└── 🔬 Trabalho_Prático_01/     # Classificação de Raios-X
 ```
 
-### 3. Executando os Notebooks
+## 🎯 Projetos Principais
 
-Abra o Jupyter Notebook ou VS Code, navegue até a pasta desejada e execute os notebooks de sua escolha.
+| Projeto                    | Tecnologias                 | Descrição                                   |
+| -------------------------- | --------------------------- | ------------------------------------------- |
+| **🗺️ Guia Turístico**      | LangChain + Groq + Pinecone | Sistema inteligente com 4 especialistas     |
+| **🏋️‍♂️ AI Fitness Coach**    | LangGraph + RAG + PDF       | Agente para planos de treino personalizados |
+| **🩻 Classificação Médica** | CNN + TensorFlow            | Análise de imagens de raios-X               |
+
+## ⚡ Quick Start
+
+```bash
+# 1. Clonar repositório
+git clone https://github.com/Kevin-Perdomo/Rede_Neural_Artificial.git
+
+# 2. Ambiente para LangChain/LangGraph
+conda create -n LangChain python=3.11 -y
+conda activate LangChain
+```
+
+## 🛠️ Stack Tecnológico
+
+- **🤖 IA Generativa:** LangChain, LangGraph, Groq
+- **📊 Vetores:** Pinecone, HuggingFace Embeddings
+- **🧠 Deep Learning:** TensorFlow, Keras, CNN
+- **📄 Documentos:** RAG, ReportLab (PDF)
 
 ---
+
+**Desenvolvido por:** [Kevin Siqueira Perdomo](https://github.com/Kevin-Perdomo)  
+**Curso:** Bacharelado em Engenharia de Computação  
+**Foco:** Redes Neurais + IA Generativa + Aplicações Práticas
